@@ -7,3 +7,8 @@ export interface Product {
     category: string;
     onSale?: boolean;
 }
+
+export interface CartItem{
+    product: Product;
+    quantity: number;
+}

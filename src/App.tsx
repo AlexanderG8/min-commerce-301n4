@@ -1,30 +1,21 @@
-import { ProductList } from "./components/ProductList"
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import HomePage from './pages/HomePage'
+import CarPage from './pages/CarPage'
 
 function App() {
-
   return (
-    <>
+    <Router>
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
-        {/* Header */}
-        <header className="bg-white/80 backdrop-blur-sm shadow-sm border-b border-gray-100 sticky top-0 z-10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Min Commerce
-              </h1>
-              <p className="mt-2 text-gray-600 text-lg">Descubre productos increíbles</p>
-            </div>
-          </div>
-        </header>
+        {/* Navegación */}
+        <Navbar />
 
-        {/* Main Content */}
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="mb-8">
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">Nuestros Productos</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-          </div>
-          <ProductList />
+        {/* Contenido Principal */}
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/carrito" element={<CarPage />} />
+          </Routes>
         </main>
 
         {/* Footer */}
@@ -36,7 +27,7 @@ function App() {
           </div>
         </footer>
       </div>
-    </>
+    </Router>
   )
 }
 
