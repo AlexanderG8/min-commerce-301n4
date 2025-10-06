@@ -11,15 +11,15 @@ function App() {
         <Navbar />
 
         {/* Contenido Principal */}
-        <main>
+        <main className="container mx-auto px-4 py-8">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/carrito" element={<CarPage />} />
+            <Route path="/cart" element={<CarPage />} />
           </Routes>
         </main>
 
         {/* Footer */}
-        <footer className="bg-gray-50 border-t border-gray-200 mt-16">
+        <footer className="bg-gray-50 border-gray-200 border-t mt-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="text-center text-gray-600">
               <p>&copy; 2025 Min Commerce. Desarrollador por <a href="https://linksxander.netlify.app/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Alexander Gomez</a>.</p>

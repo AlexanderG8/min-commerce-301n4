@@ -1,8 +1,12 @@
 import { Link, useLocation } from 'react-router-dom'
+import { useContext } from 'react'
+import { CartContext } from '../contexts/cartContext.tsx'
 
 export default function Navbar() {
   // Obtener la ruta actual
   const location = useLocation()
+  const { items } = useContext(CartContext)
+  const totalItems = items.reduce((acc, item) => acc + item.quantity, 0)
   
   // Función para verificar si la ruta es activa
   const isActive = (path: string) => {
@@ -36,16 +40,16 @@ export default function Navbar() {
             </Link>
             
             <Link
-              to="/carrito"
+              to="/cart"
               className={`flex items-center px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                isActive('/carrito') 
+                isActive('/cart') 
                   ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-md' 
                   : 'text-gray-600 hover:text-gray-800 hover:bg-gray-100'
               }`}
             >
               <span className="mr-2">🛒</span>
               Carrito
-              <span className="ml-2 bg-red-500 text-white text-xs rounded-full px-2 py-1">0</span>
+              <span className="ml-2 bg-red-500 text-white text-xs rounded-full px-2 py-1">{totalItems}</span>
             </Link>
           </nav>
         </div>
