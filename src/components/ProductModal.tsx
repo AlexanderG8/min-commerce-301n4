@@ -1,4 +1,4 @@
-import type { Product } from '../models/products'
+import type { Product } from '../types'
 import { formatPrice } from '../utils/formatPrice'
 
 interface ProductModalProps {
