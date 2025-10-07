@@ -44,9 +44,9 @@ export function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
                 {formatPrice(product.price)}
               </p>
               
-              <div className="prose prose-sm text-gray-600 mb-6">
+              {/* <div className="prose prose-sm text-gray-600 mb-6">
                 <p>{product.description || 'No hay descripción disponible para este producto.'}</p>
-              </div>
+              </div> */}
               
               <div className="mt-6">
                 <h3 className="text-lg font-medium text-gray-900 mb-2">Características:</h3>
